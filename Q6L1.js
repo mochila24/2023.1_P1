@@ -25,4 +25,13 @@ if (id1 > id2 && id1 > id3){
 }
 console.log(`Pessoa mais velha: ${pvelha}`)
 
-if( )
+if( id1 < id2 && id1 < id3) {
+    pnova = nome1
+} else if ( id2< id1 && id2 < id3) {
+    pnova = nome2
+} else if (id3 < id1 && id3 < id2) {
+    pnova = nome3
+} else {
+    pnova = 'Devido a existencia de idade repetida não foi possível ser conclusivo.'
+}
+console.log(`Pessoa mais nova: ${pnova}`)
