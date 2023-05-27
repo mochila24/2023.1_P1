@@ -1,18 +1,14 @@
-prompt = require('prompt-sync')();
-let v1 = 0
-let v2 = 0
-let v3 = 0
-let maior = 0
+const prompt = require('prompt-sync')();
 
-v1 = parseInt(prompt("Bote um valor inteiro: ",v1))
-v2 =  parseInt(prompt("Outro valor inteiro: ", v2))
-v3 = parseInt(prompt("Bote mais um valor inteiro: ",v3))
+const numValores = 3; // Número de valores a serem inseridos
+let maior = 0;
 
-maior = v1
-if (v2 > maior){
-    maior = v2
+for (let i = 1; i <= numValores; i++) {
+    const valor = parseInt(prompt(`Digite o valor ${i}: `));
+
+    if (valor > maior) {
+        maior = valor;
+    }
 }
-if (v3 > maior){
-    maior = v3
-}
-console.log("maior valor apresentado é ",maior)
+
+console.log("O maior valor inserido é", maior);
