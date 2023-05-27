@@ -11,3 +11,7 @@ nome1 = prompt('Digite um nome: ');
 id1 = Number(prompt(`Qual a idade de ${nome1}? `));
 nome2 = prompt('Digite o nome de uma segunda pessoa fictícia: ');
 console.log(`nome: ${nome1} idade: ${id1} nome2: ${nome2}`);
+
+
+
+
