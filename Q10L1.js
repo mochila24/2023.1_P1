@@ -8,4 +8,8 @@ let cuscon;
 cusfab = Number(prompt('Informe o custo de fábrica do carro: '))
 cuscon = (cusfab * dist) + (cusfab * imp) + cusfab
 
-console.log(`O valor de venda do carro é de R$${cuscon.toFixed(2)}.`)
+// Formatação do valor final em reais
+
+const valorFormatado = cuscon.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'});
+
+console.log(`O valor de venda do carro é de ${valorFormatado}.`)
