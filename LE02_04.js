@@ -14,10 +14,9 @@ do {
         cont--;
         if (cont > 0){
             media = notas / cont;
-        }
-        
+            console.log(`A média dos ${cont} estudantes é ${media.toFixed(1)}`);
+        } else {
+            console.log('Nenhum estudante informado.');
+        }   
     }
-
 } while (nota !== 99);
-
-console.log(`A média dos ${cont} estudantes é ${media.toFixed(1)}`);
