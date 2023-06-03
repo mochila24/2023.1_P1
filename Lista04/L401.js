@@ -9,20 +9,20 @@ let b = Number(prompt('b = '));
 let c = Number(prompt('c = '));
 let resultado = 0;
 
-console.clear()
+console.clear();
 
 function calcularDelta(a, b, c){
-    delta = b*b - 4 * a * c;
+    delta = (b * b) - (4 * a * c);
     return delta
 }
 
 resultado = calcularDelta(a, b, c);
 if (resultado > 0) {
-    naturezaDaRaiz = 'A equação possui duas raízes reais distintas.'
+    naturezaDaRaiz = 'A equação possui duas raízes reais distintas.';
 } else if (resultado === 0) {
-    naturezaDaRaiz = 'A equação possui duas raízes reais e iguais.'
+    naturezaDaRaiz = 'A equação possui duas raízes reais e iguais.';
 } else {
-    naturezaDaRaiz = 'A equação não possui raízes reais.'
+    naturezaDaRaiz = 'A equação não possui raízes reais.';
 }
 
 console.log(`valor de Delta: ${resultado}. ${naturezaDaRaiz}`);
