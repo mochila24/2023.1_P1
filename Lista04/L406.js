@@ -1,5 +1,3 @@
-const prompt = require('prompt-sync')();
-
 function mediaValores (...valores) {
     if ( valores.length === 0) {
         return 0;
