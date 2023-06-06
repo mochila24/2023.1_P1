@@ -1,18 +1,14 @@
 const prompt = require('prompt-sync')();
 
-// Função para calcular a média final de um aluno
 function calcularMediaFinal(aluno) {
   const media = (aluno.nota1 + aluno.nota2) / 2;
-  return media.toFixed(1); // Arredonda a média para uma casa decimal
+  return media;
 }
 
-// Array para armazenar os alunos
 let alunos = [];
 
-// Solicitar a quantidade de alunos
 const quantidadeAlunos = Number(prompt('Digite a quantidade de alunos: '));
 
-// Solicitar os dados de cada aluno
 for (let i = 1; i <= quantidadeAlunos; i++) {
   console.log(`Aluno ${i}:`);
   let nome = prompt('Digite o nome do aluno: ');
@@ -20,24 +16,24 @@ for (let i = 1; i <= quantidadeAlunos; i++) {
   let nota1 = Number(prompt('Digite a nota 1: '));
   let nota2 = Number(prompt('Digite a nota 2: '));
 
-  // Adicionar o aluno ao array de alunos
   alunos.push({ nome, disciplina, nota1, nota2 });
 }
 
 // Calcular a média final de cada aluno e definir a situação parcial
+// forEach é usada para percorrer os elementos de um array e executar uma determinada função em cada elemento.
+// Ela pode ser usada para executar alguma lógica ou realizar alguma operação em cada elemento, como modificar o elemento, realizar cálculos, exibir informações, etc.
+// O método forEach não retorna um novo array, ele apenas itera sobre os elementos existentes no array original.
 alunos.forEach(aluno => {
   aluno.mediaFinal = calcularMediaFinal(aluno);
   aluno.situacaoParcial = aluno.mediaFinal >= 6.0 ? 'Aprovado' : 'Em prova final';
 });
 
-// Filtrar os alunos aprovados e em prova final
 const aprovados = alunos.filter(aluno => aluno.situacaoParcial === 'Aprovado');
 const emProvaFinal = alunos.filter(aluno => aluno.situacaoParcial === 'Em prova final');
 
-// Calcular a média geral da turma
-const mediaGeral = alunos.reduce((total, aluno) => total + aluno.mediaFinal, 0) / alunos.length;
+const somaMedias = alunos.reduce((total, aluno) => total + aluno.mediaFinal, 0);
+const mediaGeral = somaMedias / alunos.length;
 
-// Exibir os resultados
 console.log('Alunos:');
 console.log(alunos);
 console.log('Aprovados:');
