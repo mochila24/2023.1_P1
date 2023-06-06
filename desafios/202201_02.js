@@ -16,6 +16,8 @@ console.log(lista);
 console.log('====================--------------------------=======================');
 console.log();
 
+
+
 function verificaPrimos(lista) {
     return lista.map((valor) => {
       if (valor < 2) {
@@ -33,4 +35,3 @@ function verificaPrimos(lista) {
   let resultado = verificaPrimos(lista);
 
   console.log(resultado);
-
