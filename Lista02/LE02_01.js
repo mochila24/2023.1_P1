@@ -7,7 +7,7 @@ let cont = 0;
 
 while (n !== 0) {
 
-    n = Number(prompt('Informe um valor qualquer: '));
+    n = Number(prompt('Informe um valor qualquer, ou zero para sair: '));
 
     if (cont == 0) {
         maior = n;
