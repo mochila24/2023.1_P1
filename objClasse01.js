@@ -1,5 +1,5 @@
 const prompt = require('prompt-sync')();
-
+/*
 
 class Idade {
     constructor(anoNascimento) {
@@ -23,10 +23,13 @@ class Idade {
     }
   }
 
-  
+*/
+
+
 /*
 
 usado para usar apenas dois digitos para indicar o ano
+retirado da internet
 
 
   class Idade {
