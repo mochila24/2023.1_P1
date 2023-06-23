@@ -87,11 +87,11 @@ class Efetuar {
         this.setValor2(v2);
         return this.efetuar();
     }
-    
+
 }
 
 
-let resultadoqqr = new Efetuar('*', 8 , 4);
+let resultadoqqr = new Efetuar('*', 10 , 4);
 console.log(resultadoqqr._resultado);
 console.log(resultadoqqr.calcular('/', 90, 3));
 console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
