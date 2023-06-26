@@ -35,6 +35,13 @@
 
 }
 
+class IdadeSemParametro extends Idade {
+    constructor() {
+        super();
+    }
+
+}
+
 const pessoa = new Idade(anoQueNasceu);
 console.log(pessoa.calcularIdade());
 console.log();
@@ -43,6 +50,18 @@ console.log(pessoa.calcularIdade());
 console.log();
 pessoa.setAnoNascimento(2000);
 console.log(pessoa.calcularIdade());
+console.log('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-');
+console.log()
+console.log('Testando idade sem parametro')
+let alguem = new IdadeSemParametro();
+console.log(typeof alguem);
+alguem.setAnoNascimento(2020);
+console.log(alguem.calcularIdade());
+console.log('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-');
+console.log()
+ninguem = new Idade();
+console.log(typeof ninguem);
+
 
 
 
