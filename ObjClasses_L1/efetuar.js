@@ -92,24 +92,5 @@ class Efetuar {
 module.exports = Efetuar;
 
 
-let resultadoqqr = new Efetuar('*', 10 , 4);
-console.log(resultadoqqr._resultado);
-console.log(resultadoqqr.calcular('/', 90, 3));
-console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
-console.log(resultadoqqr._resultado);
-console.log('""""""""""""""""""""""""""""""""""""""""""""""""""""""""""')
-console.log('valor 2 = 10 digitado');
-resultadoqqr.setValor2(10);
-console.log(resultadoqqr._resultado);
-console.log()
-console.log('Metodo calcular sem valor adicionado: ')
-console.log(resultadoqqr.calcular());
-console.log('------------------------')
-console.log(`30 + 6 = ${resultadoqqr.somar(30, 6)}`);
-console.log()
-console.log(`subtraindo 100 - 6 = ${resultadoqqr.subtrair(100,6)}`)
-console.log()
-console.log(`multiplicação: 5 x 10: ${resultadoqqr.multiplicar(5,10)}`);
-console.log()
-console.log(` 500 / 25: ${resultadoqqr.dividir(500,25)}`);
+
 

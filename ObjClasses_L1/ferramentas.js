@@ -59,19 +59,6 @@ class Ferramentas {
 }
 
 //numero = new Ferramentas();
-console.log(Ferramentas.quadrado(4));
-console.log(`o cubo de 3 é ${Ferramentas.cubo(3)}`);
-console.log(`8 elevado a 2 é ${Ferramentas.portencia(8, 2)}`);
-console.log(`fatorial de 5 é ${Ferramentas.fatorial(5)}`);
-console.log(`o número 256 é par? ${Ferramentas.par(256)}`);
-console.log(`547 é par? ${Ferramentas.par(547)}`);
-console.log(`101 é primo? ${Ferramentas.primo(101)}`);
-console.log(`o número 3 é primo? ${Ferramentas.primo(3)}`);
-console.log(`o número 105 é primo? ${Ferramentas.primo(105)}`);
-console.log(`o número 2 é primo? ${Ferramentas.primo(2)}`);
-console.log(`e o numeral 1 é primo? ${Ferramentas.primo(1)}`);
-sequencia = [-50, 1, 24, 12, 5, 20, 18]
-console.log(`o maior número da lista é ${Ferramentas.maior(sequencia)}`);
-console.log(`e o menor número é ${Ferramentas.menor(sequencia)}`);
+
 
 

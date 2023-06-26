@@ -60,41 +60,4 @@ class Ferramentas extends Efetuar {
     }
 }
 
-let resultadoqqr = new Efetuar('*', 10 , 4);
-console.log(resultadoqqr._resultado);
-console.log(resultadoqqr.calcular('/', 90, 3));
-console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
-console.log(resultadoqqr._resultado);
-console.log('""""""""""""""""""""""""""""""""""""""""""""""""""""""""""')
-console.log('valor 2 = 10 digitado');
-resultadoqqr.setValor2(10);
-console.log(resultadoqqr._resultado);
-console.log()
-console.log('Metodo calcular sem valor adicionado: ')
-console.log(resultadoqqr.calcular());
-console.log('------------------------')
-console.log(`30 + 6 = ${resultadoqqr.somar(30, 6)}`);
-console.log()
-console.log(`subtraindo 100 - 6 = ${resultadoqqr.subtrair(100,6)}`)
-console.log()
-console.log(`multiplicação: 5 x 10: ${resultadoqqr.multiplicar(5,10)}`);
-console.log()
-console.log(` 500 / 25: ${resultadoqqr.dividir(500,25)}`);
-console.log('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
-console.log();
-console.log('Testando os módulos de ferramentas deste aquivo: ')
-console.log();
-console.log(Ferramentas.quadrado(4));
-console.log(`o cubo de 3 é ${Ferramentas.cubo(3)}`);
-console.log(`8 elevado a 2 é ${Ferramentas.portencia(8, 2)}`);
-console.log(`fatorial de 5 é ${Ferramentas.fatorial(5)}`);
-console.log(`o número 256 é par? ${Ferramentas.par(256)}`);
-console.log(`547 é par? ${Ferramentas.par(547)}`);
-console.log(`101 é primo? ${Ferramentas.primo(101)}`);
-console.log(`o número 3 é primo? ${Ferramentas.primo(3)}`);
-console.log(`o número 105 é primo? ${Ferramentas.primo(105)}`);
-console.log(`o número 2 é primo? ${Ferramentas.primo(2)}`);
-console.log(`e o numeral 1 é primo? ${Ferramentas.primo(1)}`);
-sequencia = [-50, 1, 24, 12, 5, 20, 18]
-console.log(`o maior número da lista é ${Ferramentas.maior(sequencia)}`);
-console.log(`e o menor número é ${Ferramentas.menor(sequencia)}`);
+module.exports = {Ferramentas, Efetuar};
