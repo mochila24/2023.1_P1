@@ -8,6 +8,7 @@ function gerarNum() {
     const numeroConta = Math.floor(Math.random() * (max - min + 1)) + min;
     return numeroConta.toString();
 }
+
 let banco = 'Banco Sorte';
 let agencia = '024';
 let nConta = gerarNum();
