@@ -56,3 +56,5 @@ class Conta {
         this._saldo = Number(saldo);
     }
 }
+
+module.exports = Conta;
