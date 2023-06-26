@@ -14,7 +14,7 @@ class Efetuar {
         console.log(`operador: ${this.getOperacao()}`);
         console.log(`valor 2: ${this.getValor2()}`);
         //this.efetuar();
-        console.log(`resultado: ${this._resultado}`)
+        console.log(`resultado: ${this.efetuar()}`)
     }
 
     setValor1 (v1) {
@@ -89,6 +89,7 @@ class Efetuar {
     }
 
 }
+module.exports = Efetuar;
 
 
 let resultadoqqr = new Efetuar('*', 10 , 4);
