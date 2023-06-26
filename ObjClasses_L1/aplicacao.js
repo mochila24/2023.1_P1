@@ -11,5 +11,3 @@ console.log(calculos.multiplicar(4, 5));
 // Utilizando métodos estáticos da classe Ferramentas
 console.log(Ferramentas.quadrado(3)); 
 console.log(Ferramentas.cubo(2)); 
-
-

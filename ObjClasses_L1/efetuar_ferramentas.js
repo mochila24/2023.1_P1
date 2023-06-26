@@ -6,21 +6,13 @@ class Ferramentas extends Efetuar {
         super();
     }
     static quadrado (valor) {
-        /*this.valor1 = valor;
-        return this.valor1 * this.valor1;
-        */
        return valor * valor
     }
     static cubo (valor) {
         return valor * valor * valor
     }
     static portencia (base, expoente) {
-        this.valor1 = base;
-        this.valor2 = expoente;
-        let resultado = Math.pow(this.valor1, this.valor2);
-        return resultado;
-
-        //return base ** expoente
+        return base ** expoente
     }
     static fatorial (valor) {
         let fat = 1

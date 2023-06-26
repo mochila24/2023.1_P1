@@ -13,7 +13,6 @@ class Efetuar {
         console.log(`valor 1: ${this.getValor1()}`);
         console.log(`operador: ${this.getOperacao()}`);
         console.log(`valor 2: ${this.getValor2()}`);
-        //this.efetuar();
         console.log(`resultado: ${this.efetuar()}`)
     }
 
@@ -90,7 +89,3 @@ class Efetuar {
 
 }
 module.exports = Efetuar;
-
-
-
-

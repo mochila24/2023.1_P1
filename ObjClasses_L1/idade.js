@@ -61,8 +61,3 @@ console.log('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-');
 console.log()
 ninguem = new Idade();
 console.log(typeof ninguem);
-
-
-
-
-
