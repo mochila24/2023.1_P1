@@ -1,39 +1,43 @@
- const prompt = require('prompt-sync')();
+const prompt = require('prompt-sync')();
 
- let anoQueNasceu = parseInt(prompt('Informe o ano de nascimento: '))
+class Idade {
+  #anoAtual;
+  #anoNascimento;
+  #idade;
 
- class Idade{
-    constructor(Nascimento) {
-        this._anoAtual = new Date().getFullYear();
-        this._anoNascimento = Nascimento;
-        this._idade = this._anoAtual - this._anoNascimento;
+  constructor(nascimento) {
+    this.#anoAtual = new Date().getFullYear();
+    this.#anoNascimento = nascimento;
+    this.#idade = this.#anoAtual - this.#anoNascimento;
+  }
+
+  setAnoAtual(atual) {
+    if (atual <= this.#anoNascimento) {
+      console.log('[ERRO] Ano atual está anterior à data de nascimento.');
+    } else {
+      this.#anoAtual = atual;
+      this.#idade = this.#anoAtual - this.#anoNascimento;
     }
- 
-    setAnoAtual(atual) {
-        if (atual <= this._anoNascimento){
-            console.log('[ERRO] Ano atual está anterior a data de nascimento.')
-        } else {
-            this._anoAtual = atual
-            this._idade = this._anoAtual - this._anoNascimento
-        }
-        
-    }
+  }
 
-    setAnoNascimento(nascido) {
-        if (nascido > this._anoAtual) {
-            console.log('[ERRO] Ano informado é maior do que o registro do ano atual. Infromação não atualizada.')
-        } else {
-            this._anoNascimento = nascido
-            this._idade = this._anoAtual - this._anoNascimento
-        }
-        
+  setAnoNascimento(nascido) {
+    if (nascido > this.#anoAtual) {
+      console.log('[ERRO] Ano informado é maior do que o registro do ano atual. Informação não atualizada.');
+    } else {
+      this.#anoNascimento = nascido;
+      this.#idade = this.#anoAtual - this.#anoNascimento;
     }
+  }
 
-    calcularIdade() {
-        return this._idade
-    }
-
+  calcularIdade() {
+    return this.#idade;
+  }
 }
+
+const anoQueNasceu = parseInt(prompt('Informe o ano de nascimento: '));
+const idade = new Idade(anoQueNasceu);
+console.log(idade.calcularIdade());
+
 
 class IdadeSemParametro extends Idade {
     constructor() {

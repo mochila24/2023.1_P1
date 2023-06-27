@@ -1,91 +1,88 @@
 class Efetuar {
-    constructor (op = '+', v1 = 1, v2 = 1) {
-        this._valor1 = Number(v1);
-        this._valor2 = Number(v2);
-        this._operacao = op;
-        this._resultado = this.efetuar();
+    #valor1;
+    #valor2;
+    #operacao;
+    #resultado;
+  
+    constructor(op = '+', v1 = 1, v2 = 1) {
+      this.#valor1 = Number(v1);
+      this.#valor2 = Number(v2);
+      this.#operacao = op;
+      this.#resultado = this.#efetuar();
     }
-
-    calcular (op = this._operacao, v1 = this._valor1, v2 = this._valor2) {
-        this.setOperacao(op);
-        this.setValor1(v1);
-        this.setValor2(v2);
-        console.log(`valor 1: ${this.getValor1()}`);
-        console.log(`operador: ${this.getOperacao()}`);
-        console.log(`valor 2: ${this.getValor2()}`);
-        console.log(`resultado: ${this.efetuar()}`)
+  
+    #setValor1(v1) {
+      this.#valor1 = Number(v1);
+      this.#resultado = this.#efetuar();
     }
-
-    setValor1 (v1) {
-        this._valor1 = Number(v1);
-        this._resultado = this.efetuar();
-    }
+  
     getValor1() {
-        return this._valor1;
+      return this.#valor1;
     }
-
-    setValor2 (v2) {
-        this._valor2 = Number(v2);
-        this._resultado = this.efetuar();
+  
+    #setValor2(v2) {
+      this.#valor2 = Number(v2);
+      this.#resultado = this.#efetuar();
     }
-
+  
     getValor2() {
-        return this._valor2;
+      return this.#valor2;
     }
-
-    setOperacao(op) {
-        this._operacao = op;
-        this._resultado = this.efetuar();
+  
+    #setOperacao(op) {
+      this.#operacao = op;
+      this.#resultado = this.#efetuar();
     }
-
+  
     getOperacao() {
-        return this._operacao;
+      return this.#operacao;
     }
-
-    efetuar() {
-        if (this._operacao === '+') {
-            this._resultado = this._valor1 + this._valor2;
-        }else if (this._operacao === '-') {
-            this._resultado = this._valor1 - this._valor2;
-        } else if (this._operacao === '*') {
-            this._resultado = this._valor1 * this._valor2;
-        } else if (this._operacao === '/') {
-            if (this._valor2 === 0) {
-                this._resultado = `ERRO [divisor não pode ser valor ZERO]`;
-            } else {
-                this._resultado = this._valor1 / this._valor2;
-            }
+  
+    #efetuar() {
+      if (this.#operacao === '+') {
+        this.#resultado = this.#valor1 + this.#valor2;
+      } else if (this.#operacao === '-') {
+        this.#resultado = this.#valor1 - this.#valor2;
+      } else if (this.#operacao === '*') {
+        this.#resultado = this.#valor1 * this.#valor2;
+      } else if (this.#operacao === '/') {
+        if (this.#valor2 === 0) {
+          this.#resultado = `ERRO [divisor não pode ser valor ZERO]`;
+        } else {
+          this.#resultado = this.#valor1 / this.#valor2;
         }
-        return this._resultado
+      }
+      return this.#resultado;
     }
-
+  
     somar(v1, v2) {
-        this.setOperacao('+');
-        this.setValor1(v1);
-        this.setValor2(v2);
-        return this.efetuar();
+      this.#setOperacao('+');
+      this.#setValor1(v1);
+      this.#setValor2(v2);
+      return this.#efetuar();
     }
-
-    subtrair (v1, v2) {
-        this.setOperacao('-');
-        this.setValor1(v1);
-        this.setValor2(v2);
-        return this.efetuar();
+  
+    subtrair(v1, v2) {
+      this.#setOperacao('-');
+      this.#setValor1(v1);
+      this.#setValor2(v2);
+      return this.#efetuar();
     }
-
-    multiplicar (v1, v2) {
-        this.setOperacao('*');
-        this.setValor1(v1);
-        this.setValor2(v2);
-        return this.efetuar();
+  
+    multiplicar(v1, v2) {
+      this.#setOperacao('*');
+      this.#setValor1(v1);
+      this.#setValor2(v2);
+      return this.#efetuar();
     }
-
-    dividir (v1, v2) {
-        this.setOperacao('/');
-        this.setValor1(v1);
-        this.setValor2(v2);
-        return this.efetuar();
+  
+    dividir(v1, v2) {
+      this.#setOperacao('/');
+      this.#setValor1(v1);
+      this.#setValor2(v2);
+      return this.#efetuar();
     }
-
-}
-module.exports = Efetuar;
+  }
+  
+  module.exports = Efetuar;
+  
