@@ -50,7 +50,7 @@ class Vaga {
             
         } else if (this.#saida === 'hora') {
             console.log();
-            console.log("Veículo ainda estacionado. Não foi registrada a saída.");
+            console.log("Veículo estacionado. Não foi registrada a saída.");
             console.log();
             console.log("-------- COMPROVANTE DE ESTACIONAMENTO --------");
             console.log(`Professor: ${this.#professor}`);
