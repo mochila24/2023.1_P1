@@ -44,5 +44,17 @@ console.log(`Tempo decorrido: ${tempoDecorridoString}`);
 
 const Vaga = require('./ObjClasses_L1/vaga.js');
 
-const vaga1 = new Vaga('joão', 'ADS', '12345', 'ABC123', 'ModeloA', 'Azul');
+const vaga1 = new Vaga('joão', 'ADS', '12345', 'ABC123', 'ModeloA', 'Azul', '12:05');
 vaga1.comprovanteEstacionamento();
+console.log();
+console.log(vaga1.permanencia());
+vaga1.comprovanteEstacionamento();
+vaga1.dadosVeiculo();
+console.log();
+vaga1.dadosProfessor();
+console.log('-----testando sem hora para entrada')
+const vaga2 = new Vaga ('Elzio', 'Quimica', '20202005', 'ABC-0102', 'Corsa', 'Prata');
+console.log('Pedindo comprovante de EStacionamento----------------')
+vaga2.comprovanteEstacionamento();
+
+
