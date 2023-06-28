@@ -1,5 +1,5 @@
 const prompt = require('prompt-sync')();
-
+/*
 let N = Number(prompt('Digite o valor de N: '));
 
 let termo1 = 0;
@@ -14,3 +14,5 @@ while (termoAtual < N) {
   termo1 = termo2;
   termo2 = termoAtual;
 }
+*/
+
