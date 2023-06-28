@@ -35,8 +35,7 @@ class Aluno {
         this.#cidade = 'cidade';
 
     }
-    matricular (nome, curso, ano, pai, mae, bolsista, rg, cpf, telefone1, telefone2, email, endereco, bairro, cidade) {
-        
+    matricular (nome, curso, ano, pai, mae, bolsista, rg, cpf, telefone1, telefone2, email, endereco, bairro, cidade) { 
 
         function numMatricula () {
             const matricula = Aluno.numeroMatricula.toString();
