@@ -1,65 +1,71 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lanche</title>
-    <link rel="stylesheet" href="estilo.css">
-</head>
-<body>
-    <header>
-        <h1>Pedido</h1>
-    </header>
-    <section>
-        <div>
-            <p>Nome:
-                <input type="text" name="tnome" id="fnome">
-            </p>
-        </div>
-        <div>
-            <p>Comida R$1,00:
-                <input type="radio" name="csoun" id="csim" > 
-                <label for="csim">Sim</label> 
-                <input type="radio" name="csoun" id="cnao" checked>
-                <label for="cnao">Não</label>
-            </p>
-        </div>
-        <div>
-            <p>Bebidas:</p>
-            <input type="checkbox" name="bebida" id="agua">
-            <label for="agua">Água (R$2,00)</label>
-            <input type="checkbox" name="bebida" id="cocacola">
-            <label for="cocacola">Coca-Cola (R$5,00)</label>
-            <input type="checkbox" name="bebida" id="suco">
-            <label for="suco">Suco (R$3,50)</label>
-        </div>
-        <div>
-            <p>
-                <input id="botao" type="button" value="Verificar" onclick="verificar()">
-            </p>
-        </div>
-        <div id="res">
-            <span id="numeroPedido"></span> <!-- Elemento para exibir o número do pedido -->
-            Total R$ 0.00 (aperte VERIFICAR para atualizar o valor do pedido)
-          </div>
-          
-        <div>
-            <input id="botconf" type="button" value="Confirmar" onclick="confirmar()">
-        </div>
-        <div>
-            <select name="flista" id="flista" size="5"></select>
-        </div>
-        <div>
-            <input id="botao" type="button" value="Todos os Pedidos" onclick="exibirTodos()">
-        </div>
-        <div id="todos">
 
-        </div>
-    </section>
-    <footer>
-        <p>&copy; Brunito</p>
-    </footer>
-    <script src="script.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lanche</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+  <header>
+    <h1>Pedido</h1>
+  </header>
+  <section>
+    <div>
+      <p>Nome:
+        <input type="text" name="tnome" id="fnome">
+      </p>
+    </div>
+    <div>
+      <p>Comida R$1,00:
+        <input type="radio" name="csoun" id="csim">
+        <label for="csim">Sim</label>
+        <input type="radio" name="csoun" id="cnao" checked>
+        <label for="cnao">Não</label>
+      </p>
+    </div>
+    <div>
+      <p>Selecione a(s) bebida(s):
+        <input type="checkbox" id="semBebida" onchange="toggleBebidaOptions()" checked>
+        <label for="semBebida">Sem bebida</label>
+        <br>
+        <input type="checkbox" name="bebida" id="agua" value="Água" data-valor="2.00" disabled>
+        <label for="agua">Água</label>
+        <br>
+        <input type="checkbox" name="bebida" id="cocacola" value="Coca-Cola" data-valor="5.00" disabled>
+        <label for="cocacola">Coca-Cola</label>
+        <br>
+        <input type="checkbox" name="bebida" id="suco" value="Suco" data-valor="3.50" disabled>
+        <label for="suco">Suco</label>
+      </p>
+    </div>
+    <div>
+      <p>
+        <input id="botao" type="button" value="Verificar" onclick="verificar()">
+      </p>
+    </div>
+    <div id="res">
+      Total R$ 0.00 (aperter VERIFICAR para atualizar o valor do pedido)
+    </div>
+    <div>
+      <input id="botconf" type="button" value="Confirmar" onclick="confirmar()">
+    </div>
+    <div>
+      <select name="flista" id="flista" size="5"></select>
+    </div>
+    <div>
+      <input id="botao" type="button" value="Todos os Pedidos" onclick="exibirTodos()">
+    </div>
+    <div id="todos"></div>
+  </section>
+  <footer>
+    <p>&copy;Brunito</p>
+  </footer>
+  <script src="script.js"></script>
 </body>
+
 </html>
+
