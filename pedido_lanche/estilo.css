@@ -1,0 +1,44 @@
+body {
+    background: rgb(3, 82, 3);
+    font: normal 15pt Arial;
+}
+
+header {
+    color: white;
+    text-align: center; 
+
+}
+
+section {
+    background: white; 
+    border-radius: 10px; 
+    padding: 15px; 
+    width: 500px;
+    margin:  auto; 
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.534); 
+
+}
+
+input#botao {
+    background: green;
+    color: white;
+    font: normal 15pt arial;
+    width: 200px;
+}
+
+input#botconf {
+    background: rgb(160, 54, 54);
+    color: white;
+    font: normal 15pt arial;
+    margin: 10px 10px 10px 10px;
+}
+
+select#flista {
+    width: 500px;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    font: italic 10pt arial;
+}
