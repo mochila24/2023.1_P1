@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lanche</title>
+    <title>Lanche</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
@@ -26,22 +26,24 @@
             </p>
         </div>
         <div>
-            <p>Bebida R$1,00:
-                <input type="radio" name="bsoun" id="bsim" > 
-                <label for="bsim">Sim</label> 
-                <input type="radio" name="bsoun" id="bnao" checked> 
-                <label for="bnao">Não</label>
-            </p>
+            <p>Bebidas:</p>
+            <input type="checkbox" name="bebida" id="agua">
+            <label for="agua">Água (R$2,00)</label>
+            <input type="checkbox" name="bebida" id="cocacola">
+            <label for="cocacola">Coca-Cola (R$5,00)</label>
+            <input type="checkbox" name="bebida" id="suco">
+            <label for="suco">Suco (R$3,50)</label>
         </div>
-            </p>
         <div>
             <p>
                 <input id="botao" type="button" value="Verificar" onclick="verificar()">
             </p>
         </div>
         <div id="res">
-            Total R$ 0.00 (aperter VERIFICAR para atualizar o valor do pedido)
-        </div>
+            <span id="numeroPedido"></span> <!-- Elemento para exibir o número do pedido -->
+            Total R$ 0.00 (aperte VERIFICAR para atualizar o valor do pedido)
+          </div>
+          
         <div>
             <input id="botconf" type="button" value="Confirmar" onclick="confirmar()">
         </div>
@@ -49,14 +51,14 @@
             <select name="flista" id="flista" size="5"></select>
         </div>
         <div>
-            <input id="botao" type="button" value="Todos os Pedidos" onclick="todos()">
+            <input id="botao" type="button" value="Todos os Pedidos" onclick="exibirTodos()">
         </div>
         <div id="todos">
 
         </div>
     </section>
     <footer>
-        <p>&copy;Brunito</p>
+        <p>&copy; Brunito</p>
     </footer>
     <script src="script.js"></script>
 </body>

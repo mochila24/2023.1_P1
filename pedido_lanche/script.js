@@ -1,78 +1,117 @@
-var tcsoun = document.getElementsByName('csoun')
-var tbsoun = document.getElementsByName('bsoun')
-var tnome = window.document.querySelector('input#fnome')
-var res = window.document.querySelector('div#res')
-var tod = document.querySelector('div#todos')
-var nomes = []
-var pedidos = []
-var tbebidas = 0.00
-var tcomidas = 0.00
-var total = 0.00
-var comida = ''
-var bebida = ''
+const tcsoun = document.getElementsByName('csoun');
+const tnome = document.querySelector('input#fnome');
+const res = document.querySelector('div#res');
+const tod = document.querySelector('div#todos');
+const pedidos = [];
+let numeroPedido = 1;
 
-function isNome(n1,l1) {
-    if (l1.indexOf(n1) != -1 ) {
-        return true
-    } else {
-        return false
-    }
+function isNomeRepetido(nome) {
+  return pedidos.some(pedido => pedido.nome === nome);
 }
 
 function verificar() {
-    
-    if (tnome.value.length == 0) {
-        window.alert('Erro! Campo NOME está incompleto!')
-        tnome.focus()
-    } else if (isNome(tnome.value, nomes)) {
-        alert('Nome repetido. Altere o campo Nome.')
-        tnome.focus()
+  if (tnome.value.trim() === '') {
+    window.alert('Erro! Campo NOME está incompleto!');
+    tnome.focus();
+    return;
+  }
 
+  let nome = tnome.value.trim();
+
+  if (isNomeRepetido(nome)) {
+    const resposta = window.confirm('Nome repetido. Deseja alterar o nome?');
+    if (resposta) {
+      let suffix = 1;
+      while (isNomeRepetido(nome + suffix)) {
+        suffix++;
+      }
+      nome = nome + suffix;
     } else {
-        
-        if (tcsoun[0].checked) {
-            comida = 'COM comida'
-            tcomidas = 1.00   
-        } else if (tcsoun[1].checked) {
-            comida = 'SEM comida'
-            tcomidas = 0
-        }
-        if (tbsoun[0].checked) { 
-            bebida = 'COM bebida'
-            tbebidas = 1.00   
-        } else if (tbsoun[1].checked) {
-            bebida = 'SEM bebida'
-            tbebidas = 0
-        }
-        total = tbebidas + tcomidas
-        res.style.textAlign = 'center'
-        res.innerHTML = `Pedido de ${tnome.value}: ${comida} e ${bebida}.R$${total.toFixed(2)}`
+      tnome.focus();
+      return;
     }
+  }
+
+  const comida = tcsoun[0].checked ? 'COM comida' : 'SEM comida';
+
+  let bebidasSelecionadas = [];
+  let valorBebidas = 0;
+
+  const tbebida = document.getElementsByName('bebida');
+
+  // Verifica quais bebidas foram selecionadas e acumula os valores
+  for (let i = 0; i < tbebida.length; i++) {
+    if (tbebida[i].checked) {
+      bebidasSelecionadas.push(tbebida[i].id);
+      if (tbebida[i].id === 'agua') {
+        valorBebidas += 2.0;
+      } else if (tbebida[i].id === 'cocacola') {
+        valorBebidas += 5.0;
+      } else if (tbebida[i].id === 'suco') {
+        valorBebidas += 3.5;
+      }
+    }
+  }
+
+  const total = valorBebidas + (tcsoun[0].checked ? 1.0 : 0.0);
+  res.style.textAlign = 'center';
+  res.innerHTML = `Pedido #${numeroPedido}: ${nome}: ${comida} e ${bebidasSelecionadas.join(', ')}. Total: R$${total.toFixed(2)}`;
 }
 
 function confirmar() {
-    if (total <= 0){
-        alert('Falta VERIFICAR o valor. Não permitido pedidos com valor R$0,00')
-    } else {
-    res.innerHTML = 'Total R$ 0.00 (aperter VERIFICAR para atualizar o valor do pedido)'
-    var tlista = document.querySelector('select#flista')
-    var item = document.createElement('option')
-    item.text = `Pedido de ${tnome.value}: ${comida} e ${bebida}. R$${total.toFixed(2)}`
-    tlista.appendChild(item)
-    pedidos.push(`Pedido de ${tnome.value}: ${comida} e ${bebida}. R$${total.toFixed(2)}`)
-    nomes.push(tnome.value)
-    tnome.value = ''
-    tnome.focus()
-    total = 0
-    tod.innerHTML = ''
-}
-}
+  if (res.innerHTML === '') {
+    alert('Falta VERIFICAR o valor. Não é permitido fazer pedidos com valor R$0,00');
+    return;
+  }
 
-function todos(){
-    tod.innerHTML += `Relação de todos os pedidos:<br>`
-    for(let pos in pedidos) {
-        tod.innerHTML += `${pedidos[pos]}<br>`
+  const pedido = {
+    numero: numeroPedido,
+    nome: tnome.value,
+    comida: tcsoun[0].checked ? 'COM comida' : 'SEM comida',
+    bebidas: [],
+    total: 0
+  };
+
+  const tbebida = document.getElementsByName('bebida');
+
+  // Adiciona as bebidas selecionadas ao pedido
+  for (let i = 0; i < tbebida.length; i++) {
+    if (tbebida[i].checked) {
+      pedido.bebidas.push(tbebida[i].id);
     }
+  }
 
+  let valorBebidas = 0;
+
+  // Calcula o valor total das bebidas selecionadas
+  for (const bebida of pedido.bebidas) {
+    if (bebida === 'agua') {
+      valorBebidas += 2.0;
+    } else if (bebida === 'cocacola') {
+      valorBebidas += 5.0;
+    } else if (bebida === 'suco') {
+      valorBebidas += 3.5;
+    }
+  }
+
+  pedido.total = valorBebidas + (tcsoun[0].checked ? 1.0 : 0.0);
+
+  pedidos.push(pedido);
+
+  const tlista = document.querySelector('select#flista');
+  const option = document.createElement('option');
+  option.text = `Pedido #${pedido.numero}: ${pedido.nome}: ${pedido.comida} e ${pedido.bebidas.join(', ')}. Total: R$${pedido.total.toFixed(2)}`;
+  tlista.appendChild(option);
+
+  tnome.value = '';
+  tnome.focus();
+  res.innerHTML = 'Total R$ 0.00 (aperte VERIFICAR para atualizar o valor do pedido)';
+  numeroPedido++;
 }
 
+function exibirTodos() {
+  tod.innerHTML = 'Relação de todos os pedidos:<br>';
+  pedidos.forEach(pedido => {
+    tod.innerHTML += `Pedido #${pedido.numero}: ${pedido.nome}: ${pedido.comida} e ${pedido.bebidas.join(', ')}. Total: R$${pedido.total.toFixed(2)}<br>`;
+  });
+}
